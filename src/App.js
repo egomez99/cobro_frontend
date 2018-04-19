@@ -8,15 +8,18 @@ import Switch from 'react-router-dom/es/Switch';
 import Route from 'react-router-dom/es/Route';
 import Redirect from 'react-router-dom/es/Redirect';
 import BrowserRouter from 'react-router-dom/es/BrowserRouter';
+import f_pago1 from './methods_statement_cards.png';
+import f_pago2 from './oxxopay.svg';
+import f_pago3 from './paypal.svg';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/productos/:id" component={Item} />
-          <Route path="/" exact strict component={Item} />
-          <Redirect to="/" />
+        <Route path="/productos/:id" component={Item} />
+        <Route path="/" exact strict component={Item} />
+          <Redirect to="/productos/1" />
         </Switch>
       </BrowserRouter>
     );
@@ -47,6 +50,13 @@ class Item extends Component {
     },
     navLogo: {
       height: '80%'
+    },
+    navPago1: {
+        display: 'flex',
+        justifycontent: 'center',
+        width: '50%',
+        height: '50%',
+        alignItems: 'flex'
     },
     navLinksContainer: {
       display: 'flex',
@@ -110,42 +120,72 @@ class Item extends Component {
     }
   };
   products = [
-    {
-      id: 'producto1',
-      title: 'Digestion',
-      description:
-        'Producto: Digestión Pura. Colon limpio y sana digestión. No mas estreñimiento. Aporta mucílagos naturales, los cuales ayudan a  limpiar el colon de una manera eficáz y natural, sin dañar la salud.',
-      price: 10000.0,
-      image:
-        'http://www.suiiki.com/wp-content/uploads/2018/01/DigestionPura_small-1-300x155.png',
-      shipping: 'No shipping'
-    },
-    {
-      id: 'producto2',
+	  {
+        id: 'Sucess',
+        title: 'Te hemos timado !!!',
+        description:
+          'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
+        price: 290.0,
+        paymentCredit: '',
+        paymentPaypal: '',
+        paymentOxxo: '',
+        image:
+          'http://www.suiiki.com/wp-content/uploads/2018/01/DigestionPura_small.png',
+        shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
+      },
+      {
+          id: '1',
+          title: 'Digestion',
+          description:
+            'Producto: Digestión Pura. Colon limpio y sana digestión. No mas estreñimiento. Aporta mucílagos naturales, los cuales ayudan a  limpiar el colon de una manera eficáz y natural, sin dañar la salud.',
+          price: 290.0,
+          paymentCredit: 'http://www.gooogle.com',
+          paymentPaypal: 'http://localhost:9000/charge/paypal/item1',
+          paymentOxxo: 'http://www.gooogle.com',
+          image:
+            'http://www.suiiki.com/wp-content/uploads/2018/01/DigestionPura_small.png',
+          shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
+        },
+        {
+      id: '2',
       title: 'Fitoestrogenos',
       description:
-        ' No contiene sustancias que pongan en riesgo la salud de la mujer, ya que su elaboración es a base de Fito estrógenos obtenidos de semillas y plantas ricas en estrógenos femeninos naturales.',
-      price: 8000.0,
+        "Presentación: Tarro con 270 gr. (30 porciones por envase, equivalente a un mes).",
+      price: 447.00,
+      paymentCredit: 'http://www.gooogle.com',
+      paymentPaypal: 'http://localhost:9000/charge/paypal/item2',
+      paymentOxxo: 'http://www.gooogle.com',
       image:
         'http://www.suiiki.com/wp-content/uploads/2018/01/Fitoestrogenos_small-1-300x200.png',
-      shipping: 'No shipping'
+      shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
+    	  
     },
     {
-      id: 'producto3',
-      title: 'Quema Grasa Corporal',
-      description:
-        'Ayudan a regular el apetito, causando sensación de saciedad. Es un excelente adelgazante y antinflamatorio. No causa efectos dañinos a la salud. No provoca rebote, ya que es natural y su efecto es gradual.',
-      price: 100.0,
-      image:
-        'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
-      shipping: `Orders are printed and shipped when the time expires or earlier.
-              You can expect your package to arrive 10 - 13 business days after
-              the product prints. Expedited or Rush shipping may be available
-              depending upon the product(s) selected and the destination
-              country. Shipping costs start at: $3.99 for the first apparel item
-              and $2.00 for each additional apparel item. Products are fulfilled
-              in the US`
-    }
+        id: '3',
+        title: 'Moringa Suiiki',
+        description:
+         "Rico en Vitaminas, Minerales y antioxidantes.\t\tLa moringa es rica en un alto contenido de vitaminas, minerales y aminoácidos.",
+        price: 250.00,
+        paymentCredit: 'http://www.gooogle.com',
+        paymentPaypal: 'http://localhost:9000/charge/paypal/item3',
+        paymentOxxo: 'http://www.gooogle.com',
+        image:
+          'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
+        shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
+      },
+      {
+          id: '4',
+          title: 'Quema Grasa Corporal',
+          description:
+            'Ayudan a regular el apetito, causando sensación de saciedad. Es un excelente adelgazante y antinflamatorio. No causa efectos dañinos a la salud. No provoca rebote, ya que es natural y su efecto es gradual.',
+          price: 299.90,
+          paymentCredit: 'http://www.gooogle.com',
+          paymentPaypal: 'http://localhost:9000/charge/paypal/item4',
+          paymentOxxo: 'http://www.gooogle.com',
+          image:
+            'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
+          shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
+        }
   ];
   render() {
     const { styles, products } = this;
@@ -155,16 +195,16 @@ class Item extends Component {
     return (
       <Fragment>
         <div style={styles.navContainer}>
-          <img style={styles.navLogo} src={logo} alt="calithecat" />
+          <img style={styles.navLogo} src={logo} alt="suiiki" />
           <div style={styles.navLinksContainer}>
-            <a style={styles.navLink} href="http://midominio.com">
-              HOME
+            <a style={styles.navLink} href="http://www.suiiki.com/">
+              Inicio
             </a>
-            <a style={styles.navLink} href="http://midominio.com/blog">
-              BLOG
+            <a style={styles.navLink} href="http://suiiki.com/sobre-el-sitio/">
+              Sobre el Sitio
             </a>
-            <a style={styles.navLink} href="http://midominio.com/contact">
-              CONTACT
+            <a style={styles.navLink} href="http://suiiki.com/contact/">
+              Contacto
             </a>
           </div>
         </div>
@@ -176,9 +216,22 @@ class Item extends Component {
             <h1 style={styles.title}>{product.title}</h1>
             <p style={styles.description}>{product.description}</p>
             <p style={styles.price}>${product.price} MXN</p>
-            <p style={styles.shipping}>Shipping Info</p>
+            <p style={styles.shipping}>información de envío</p>
             <p style={styles.details}>{product.shipping}</p>
-          </div>
+            
+            <p style={styles.details}>
+            <a href={product.paymentCredit}>
+        	    <img  style={styles.navPago1} src={f_pago1} alt="paga no seas codo" />
+        	</a>
+        	<a href={product.paymentOxxo}>
+        	    <img style={styles.navPago1} src={f_pago2} alt="paseme no se haga" />
+            </a>
+        	<a href={product.paymentPaypal}>
+        	    <img style={styles.navPago1} src={f_pago3} alt="ya valio !!" />
+            </a>
+            </p>
+            
+          </div>          
         </div>
       </Fragment>
     );
