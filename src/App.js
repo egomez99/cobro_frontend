@@ -120,19 +120,6 @@ class Item extends Component {
     }
   };
   products = [
-	  {
-        id: 'Sucess',
-        title: 'Te hemos timado !!!',
-        description:
-          'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
-        price: 290.0,
-        paymentCredit: '',
-        paymentPaypal: '',
-        paymentOxxo: '',
-        image:
-          'http://www.suiiki.com/wp-content/uploads/2018/01/DigestionPura_small.png',
-        shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
-      },
       {
           id: '1',
           title: 'Digestion',
@@ -185,7 +172,20 @@ class Item extends Component {
           image:
             'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
           shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
-        }
+      },
+      {
+        id: 'Sucess',
+        title: 'Te hemos timado !!!',
+        description:
+          'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
+        
+        paymentCredit: '',
+        paymentPaypal: '',
+        paymentOxxo: '',
+        image:
+          'https://es.dreamstime.com/stock-de-ilustraci%C3%B3n-emoticon-lindo-con-los-pulgares-para-arriba-emoji-ejemplo-image96186961',
+        shipping: 'Lo siento tu producto nunca llegara jeje.'
+      }
   ];
   render() {
     const { styles, products } = this;
@@ -221,10 +221,10 @@ class Item extends Component {
             
             <p style={styles.details}>
             <a href={product.paymentCredit}>
-        	    <img  style={styles.navPago1} src={f_pago1} alt="paga no seas codo" />
+        	    <img  style={styles.navPago1} src={f_pago1} alt="Paga no seas codo" />
         	</a>
         	<a href={product.paymentOxxo}>
-        	    <img style={styles.navPago1} src={f_pago2} alt="paseme no se haga" />
+        	    <img style={styles.navPago1} src={f_pago2} alt="Pagame no te hagas" />
             </a>
         	<a href={product.paymentPaypal}>
         	    <img style={styles.navPago1} src={f_pago3} alt="ya valio !!" />
