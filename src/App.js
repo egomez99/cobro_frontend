@@ -19,7 +19,7 @@ class App extends Component {
         <Switch>
         <Route path="/productos/:id" component={Item} />
         <Route path="/" exact strict component={Item} />
-          <Redirect to="/productos/1" />
+        <Redirect to="/productos/1" />
         </Switch>
       </BrowserRouter>
     );
@@ -128,7 +128,7 @@ class Item extends Component {
           price: 290.0,
           paymentCredit: 'http://www.gooogle.com',
           paymentPaypal: 'http://localhost:9000/charge/paypal/item1',
-          paymentOxxo: 'http://www.gooogle.com',
+          paymentOxxo: 'http://localhost:9000/charge/oxxo/item1',
           image:
             'http://www.suiiki.com/wp-content/uploads/2018/01/DigestionPura_small.png',
           shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
@@ -141,7 +141,7 @@ class Item extends Component {
       price: 447.00,
       paymentCredit: 'http://www.gooogle.com',
       paymentPaypal: 'http://localhost:9000/charge/paypal/item2',
-      paymentOxxo: 'http://www.gooogle.com',
+      paymentOxxo: 'http://localhost:9000/charge/oxxo/item2',
       image:
         'http://www.suiiki.com/wp-content/uploads/2018/01/Fitoestrogenos_small-1-300x200.png',
       shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
@@ -155,7 +155,7 @@ class Item extends Component {
         price: 250.00,
         paymentCredit: 'http://www.gooogle.com',
         paymentPaypal: 'http://localhost:9000/charge/paypal/item3',
-        paymentOxxo: 'http://www.gooogle.com',
+        paymentOxxo: 'http://localhost:9000/charge/oxxo/item3',
         image:
           'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
         shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
@@ -168,24 +168,37 @@ class Item extends Component {
           price: 299.90,
           paymentCredit: 'http://www.gooogle.com',
           paymentPaypal: 'http://localhost:9000/charge/paypal/item4',
-          paymentOxxo: 'http://www.gooogle.com',
+          paymentOxxo: 'http://localhost:9000/charge/oxxo/item4',
           image:
             'http://www.suiiki.com/wp-content/uploads/2018/01/QuemaGrasa_big-300x200.png',
           shipping: 'A toda la Republica, El tiempo de entrega del producto por parte de la Mensajería inicia a partir de la confirmación de la recepción de la orden por parte de la Tienda.'
       },
       {
-        id: 'Sucess',
-        title: 'Te hemos timado !!!',
-        description:
-          'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
-        
-        paymentCredit: '',
-        paymentPaypal: '',
-        paymentOxxo: '',
-        image:
-          'https://es.dreamstime.com/stock-de-ilustraci%C3%B3n-emoticon-lindo-con-los-pulgares-para-arriba-emoji-ejemplo-image96186961',
-        shipping: 'Lo siento tu producto nunca llegara jeje.'
+          id: 'Success',
+          title: 'Te hemos timado !!!',
+          description:
+            'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
+          
+          paymentCredit: '',
+          paymentPaypal: '',
+          paymentOxxo: '',
+          image: 'https://image.shutterstock.com/image-photo/emoji-yellow-face-lol-laugh-260nw-669849526.jpg',
+          shipping: 'Lo siento tu producto nunca llegara jeje.'
+      },
+      {
+          id: 'Oxxo',
+          title: 'Te hemos timado pero ahora con Oxxo!!!',
+          description:
+            'Has comprado nuestros productos que ni sirven y no hay devoluciones !!!',
+          
+          paymentCredit: '',
+          paymentPaypal: '',
+          paymentOxxo: '',
+          image: 'https://image.shutterstock.com/image-photo/emoji-yellow-face-lol-laugh-260nw-669849526.jpg',
+          shipping: 'Lo siento tu producto nunca llegara jeje.'
       }
+      
+      
   ];
   render() {
     const { styles, products } = this;
